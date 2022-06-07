@@ -2,17 +2,22 @@ import 'package:flutter/material.dart';
 
 class CustomEntryField extends StatelessWidget {
   CustomEntryField({Key? key}) : super(key: key);
-  late String hint;
+  late String hint = "email";
   late TextEditingController controller;
   late bool isPassword = false;
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(top: 10.0),
+      margin: EdgeInsets.all(15.0),
       child: TextField(
-        // textAlignVertical: ,
+        obscureText: isPassword,
         // controller: controller,
-        decoration: InputDecoration(),
+        decoration: InputDecoration(
+          hintText: hint,
+          border: OutlineInputBorder(
+              borderSide: BorderSide(color: Colors.grey),
+              borderRadius: BorderRadius.all(Radius.circular(30))),
+        ),
       ),
     );
   }
