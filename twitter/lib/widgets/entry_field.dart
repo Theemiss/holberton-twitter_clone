@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class CustomEntryField extends StatelessWidget {
-  CustomEntryField({Key? key}) : super(key: key);
-  late String hint = "email";
+  CustomEntryField({Key? key,required this.hint,required this.isPassword,required this.controller}) : super(key: key);
+  late String hint ;
   late TextEditingController controller;
   late bool isPassword = false;
   @override
@@ -11,7 +11,7 @@ class CustomEntryField extends StatelessWidget {
       margin: EdgeInsets.all(15.0),
       child: TextField(
         obscureText: isPassword,
-        // controller: controller,
+        controller: controller,
         decoration: InputDecoration(
           hintText: hint,
           border: OutlineInputBorder(
